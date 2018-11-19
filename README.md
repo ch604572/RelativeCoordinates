@@ -1,2 +1,2 @@
 # RelativeCoordinates
-Calculate translated and rotated coordinates.
+Calculates translated and rotated coordinates.
