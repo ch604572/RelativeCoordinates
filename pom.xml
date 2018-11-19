@@ -13,7 +13,7 @@
 	</parent>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>Relative_Coordinate</artifactId>
+	<artifactId>Relative_Coordinates</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 
 	<name>Relative Coordinate</name>
