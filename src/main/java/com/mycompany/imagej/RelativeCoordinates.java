@@ -4,7 +4,8 @@ import ij.IJ;
 import ij.ImagePlus;
 
 public class RelativeCoordinates {
-protected double xOrigin;
+	
+	protected double xOrigin;
 	
 	protected double yOrigin;
 	
@@ -32,6 +33,18 @@ protected double xOrigin;
 		this.x_translated = x - this.xOrigin;
 		this.y_translated = y - this.yOrigin;	
 		IJ.log("new StrainActionRelativeCoordinates created. x_translated = " + this.x_translated + " y_translated = " + this.y_translated) ;
+	}
+	
+	public RelativeCoordinates( final double angleDeg ) {
+		ImagePlus imp = IJ.getImage();
+		this.xOrigin = imp.getCalibration().xOrigin;
+		this.yOrigin = imp.getCalibration().yOrigin;
+		this.x_translated = xOrigin;
+		this.y_translated = yOrigin;
+		this.angleDeg = angleDeg;
+		setXRotated(x_translated, y_translated);
+		setYRotated(x_translated, y_translated);		
+		IJ.log("new StrainActionRelativeCoordinates created. angleDeg = " + this.angleDeg + " x_rotated = " + this.x_rotated + " y_rotated = " + this.y_rotated);
 	}
 	
 	public RelativeCoordinates( final double x, final double y, final double angleDeg ) {
